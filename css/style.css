@@ -1884,14 +1884,14 @@ nav a:hover {
     color: white;
     font-size: 32px;
     cursor: pointer;
+    margin-left: auto;
 }
 
-
 /* =========================
-   MOBILE
-========================= */
+   MOBILE / SMALL SCREEN MENU
+   ========================= */
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
 
     header {
         padding: 12px 5%;
@@ -1909,18 +1909,28 @@ nav a:hover {
     .logo-text span {
         font-size: 12px;
         max-width: 190px;
+        line-height: 1.2;
     }
 
+    /* Hamburger */
     .menu-toggle {
-        display: block;
+        display: block !important;
+        margin-left: auto;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 32px;
+        cursor: pointer;
+        z-index: 1002;
     }
 
+    /* MENU HIDDEN BY DEFAULT */
     nav {
-        display: none;
+        display: none !important;
         position: absolute;
         top: 100%;
         right: 5%;
-        width: 220px;
+        width: 235px;
         background: #087333;
         flex-direction: column;
         align-items: stretch;
@@ -1928,13 +1938,16 @@ nav a:hover {
         padding: 10px 0;
         border-radius: 0 0 10px 10px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+        z-index: 1001;
     }
 
+    /* MENU ONLY AFTER CLICK */
     nav.active {
-        display: flex;
+        display: flex !important;
     }
 
     nav a {
+        display: block;
         padding: 13px 20px;
         font-size: 17px;
         color: white;
